@@ -1,103 +1,150 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <meta name="description" content="" />
-    <meta name="author" content="" />
-    <title>Clean Blog - Start Bootstrap Theme</title>
-    <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="QueretaroDescubre - Descubre lo mejor de Querétaro">
+    <meta name="author" content="QueretaroDescubre">
+    <title>QueretaroDescubre - Start Bootstrap Theme</title>
+    <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <!-- Font Awesome icons (free version)-->
     <script src="https://use.fontawesome.com/releases/v6.3.0/js/all.js" crossorigin="anonymous"></script>
     <!-- Google fonts-->
-    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
     <!-- Core theme CSS (includes Bootstrap)-->
-    <link href="css/styles.css" rel="stylesheet" />
+    <link href="css/styles.css" rel="stylesheet">
     <style>
-        #calendar {
-            font-family: Arial, sans-serif;
-            display: flex;
-            flex-wrap: wrap;
-            max-width: 700px; /* Ajusta el ancho máximo del calendario */
+        body {
+            font-family: 'Open Sans', sans-serif;
         }
 
-        .calendar-day {
-            flex: 1 0 14.28%; /* Ajusta el ancho de cada día para mostrar 7 días por fila */
-            max-width: 100px; /* Ancho máximo de cada día */
-            height: 80px; /* Altura de cada día */
-            border: 1px solid #ccc;
+        header.masthead {
+            position: relative;
+            width: 100%;
+            min-height: 75vh;
+            background: url('assets/img/post-bg.jpg') no-repeat center center;
+            background-size: cover;
+        }
+
+        header.masthead .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        header.masthead:before {
+            content: '';
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1;
+        }
+
+        header.masthead .post-heading {
             text-align: center;
-            line-height: 80px;
-            cursor: pointer;
-            box-sizing: border-box;
+            color: white;
         }
 
-        .calendar-day:hover {
-            background-color: #f0f0f0;
+        header.masthead .post-heading h1,
+        header.masthead .post-heading h2 {
+            color: white;
         }
-        
-        #city-select {
-            margin-bottom: 20px;
+
+        .navbar-light .navbar-nav .nav-link {
+            color: #000;
+        }
+
+        .navbar-light .navbar-nav .nav-link:hover {
+            color: #0056b3;
+        }
+
+        .reservation-section {
+            text-align: center;
+            margin-top: 40px;
+        }
+
+        .reservation-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .activity-image {
+            max-width: 100%;
+            height: auto;
+            margin-top: 20px;
+            display: none;
         }
     </style>
 </head>
 <body>
     <!-- Navigation-->
-    <nav class="navbar navbar-expand-lg navbar-light" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top" id="mainNav">
         <div class="container px-4 px-lg-5">
-            <a class="navbar-brand" href="index.html">Guia Turistica</a>
+            <a class="navbar-brand" href="index.html">QueretaroDescubre</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
-                Menu
-                <i class="fas fa-bars"></i>
+                Menu <i class="fas fa-bars"></i>
             </button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav ms-auto py-4 py-lg-0">
-                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="index.html">Inicio</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="about.html">Actividades</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="post.html">Estadía</a></li>
                     <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="contact.html">Comentarios</a></li>
+                    <li class="nav-item"><a class="nav-link px-lg-3 py-3 py-lg-4" href="inicioSesion.html">Inicia sesión</a></li>
                 </ul>
             </div>
         </div>
     </nav>
     <!-- Page Header-->
-    <header class="masthead" style="background-image: url('assets/img/post-bg.jpg')">
+    <header class="masthead">
         <div class="container position-relative px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
                     <div class="post-heading">
-                        <h1>Estadía</h1>
-                        <h2 class="subheading">Elegir una fecha y descubre que lugares hay disponibles</h2>
-                        <span class="meta">
-                            cuando y donde te veremos!?
-                            <a href="#!"></a>
-                        </span>
+                        <h1>Reservación</h1>
+                        <h2 class="subheading">Selecciona tu destino y fecha para realizar una reservación</h2>
                     </div>
                 </div>
             </div>
         </div>
     </header>
-    <!-- City Select -->
-    <section class="container px-4 px-lg-5 mt-5">
-        <div>
-            <label for="city-select">Selecciona un lugar y descubre las fechas disponibles!:</label>
-            <select id="city-select">
-                <option value="centro-historico-queretaro">Centro Histórico de Querétaro</option>
-                <option value="pena-de-bernal">Peña de Bernal</option>
-                <option value="vinhedos-ruta-vino">Viñedos y Ruta del Vino</option>
-                <option value="termas-san-joaquin">Termas de San Joaquín</option>
-                <option value="ruta-conventos">Ruta de los Conventos</option>
-                <option value="sierra-gorda-queretaro">Sierra Gorda de Querétaro</option>
-                <option value="cascada-el-chuveje">Cascada El Chuveje</option>
-                <option value="paseos-globo-aerostatico">Paseos en Globo Aerostático</option>
-                <option value="museos-galerias-arte">Museos y Galerías de Arte</option>
-            </select>
-        </div>
-        <div id="calendar"></div>
+    <!-- Reservation Form -->
+    <section class="container reservation-section">
+        <form class="reservation-form">
+            <div class="mb-3">
+                <label for="city-select" class="form-label">Selecciona un destino:</label>
+                <select id="city-select" class="form-select">
+                    <option value="centro-historico-queretaro">Centro Histórico de Querétaro</option>
+                    <option value="pena-de-bernal">Peña de Bernal</option>
+                    <option value="vinhedos-ruta-vino">Viñedos y Ruta del Vino</option>
+                    <option value="termas-san-joaquin">Termas de San Joaquín</option>
+                    <option value="ruta-conventos">Ruta de los Conventos</option>
+                    <option value="sierra-gorda-queretaro">Sierra Gorda de Querétaro</option>
+                    <option value="cascada-el-chuveje">Cascada El Chuveje</option>
+                    <option value="paseos-globo-aerostatico">Paseos en Globo Aerostático</option>
+                    <option value="museos-galerias-arte">Museos y Galerías de Arte</option>
+                </select>
+            </div>
+            <div class="mb-3">
+                <label for="reservation-date" class="form-label">Selecciona una fecha:</label>
+                <input type="date" id="reservation-date" class="form-control">
+            </div>
+            <div class="mb-3">
+                <label for="num-people" class="form-label">Número de personas:</label>
+                <input type="number" id="num-people" class="form-control" min="1" value="1">
+            </div>
+            <button type="submit" class="btn btn-primary">Reservar</button>
+        </form>
+    </section>
+    <!-- Activity Image -->
+    <section class="activity-section">
+        <img id="activity-image" class="activity-image" src="" alt="Imagen de la actividad seleccionada">
     </section>
     <!-- Footer-->
-    <footer class="border-top">
+    <footer class="border-top py-4">
         <div class="container px-4 px-lg-5">
             <div class="row gx-4 gx-lg-5 justify-content-center">
                 <div class="col-md-10 col-lg-8 col-xl-7">
@@ -127,7 +174,7 @@
                             </a>
                         </li>
                     </ul>
-                    <div class="small text-center text-muted fst-italic">Copyright &copy; Proyecto integrador 2024</div>
+                    <div class="small text-center text-muted fst-italic">Copyright &copy; QueretaroDescubre 2024</div>
                 </div>
             </div>
         </div>
@@ -136,58 +183,54 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
     <!-- Core theme JS-->
     <script src="js/scripts.js"></script>
-    <script>
+    //-<script>
         document.addEventListener("DOMContentLoaded", function() {
-            const calendar = document.getElementById('calendar');
             const citySelect = document.getElementById('city-select');
+            const activityImage = document.getElementById('activity-image');
             const cities = {
-                'centro-historico-queretaro': 'Centro Histórico de Querétaro',
-                'pena-de-bernal': 'Peña de Bernal',
-                'vinhedos-ruta-vino': 'Viñedos y Ruta del Vino',
-                'termas-san-joaquin': 'Termas de San Joaquín',
-                'ruta-conventos': 'Ruta de los Conventos',
-                'sierra-gorda-queretaro': 'Sierra Gorda de Querétaro',
-                'cascada-el-chuveje': 'Cascada El Chuveje',
-                'paseos-globo-aerostatico': 'Paseos en Globo Aerostático',
-                'museos-galerias-arte': 'Museos y Galerías de Arte'
+                'centro-historico-queretaro': {
+                    name: 'Centro Histórico de Querétaro',
+                    img: 'assets/centro-historico.jpg'
+                },
+                'pena-de-bernal': {
+                    name: 'Peña de Bernal',
+                    img: 'assets/pena-de-bernal.jpg'
+                },
+                'vinhedos-ruta-vino': {
+                    name: 'Viñedos y Ruta del Vino',
+                    img: 'assets/ruta-del-vino.jpg'
+                },
+                'termas-san-joaquin': {
+                    name: 'Termas de San Joaquín',
+                    img: 'assets/termas-san-joaquin.jpg'
+                },
+                'ruta-conventos': {
+                    name: 'Ruta de los Conventos',
+                    img: 'assets/ruta-conventos.jpg'
+                },
+                'sierra-gorda-queretaro': {
+                    name: 'Sierra Gorda de Querétaro',
+                    img: 'assets/sierra-gorda.jpg'
+                },
+                'cascada-el-chuveje': {
+                    name: 'Cascada El Chuveje',
+                    img: 'assets/cascada-el-chuveje.jpg'
+                },
+                'paseos-globo-aerostatico': {
+                    name: 'Paseos en Globo Aerostático',
+                    img: 'assets/paseo-en-globo.jpg'
+                },
+                'museos-galerias-arte': {
+                    name: 'Museos y Galerías de Arte',
+                    img: 'assets/museos-galerias.jpg'
+                }
             };
-            // Función para generar el calendario
-            function generateCalendar(year, month) {
-                calendar.innerHTML = '';
-                // Obtener el primer día del mes
-                const firstDay = new Date(year, month, 1);
-                const startingDay = firstDay.getDay();
-                // Obtener el último día del mes
-                const lastDay = new Date(year, month + 1, 0);
-                const numDays = lastDay.getDate();
-                // Generar los días del mes
-                for (let i = 0; i < startingDay; i++) {
-                    const day = document.createElement('div');
-                    day.classList.add('calendar-day');
-                    calendar.appendChild(day);
-                }
-                for (let i = 1; i <= numDays; i++) {
-                    const day = document.createElement('div');
-                    day.classList.add('calendar-day');
-                    day.textContent = i;
-                    calendar.appendChild(day);
-                    // Agregar evento clic para mostrar el día seleccionado
-                    day.addEventListener('click', function() {
-                        alert(`Seleccionaste el día ${i}/${month + 1}/${year}`);
-                    });
-                }
-            }
-            // Generar el calendario del mes actual al cargar la página
-            const today = new Date();
-            generateCalendar(today.getFullYear(), today.getMonth());
 
-            // Cambiar el calendario al seleccionar una ciudad
             citySelect.addEventListener('change', function() {
                 const selectedCity = this.value;
-                const cityName = cities[selectedCity];
-                alert(`Seleccionaste el destino: ${cityName}`);
-                // Aquí puedes implementar lógica para cargar el calendario de la ciudad seleccionada
-                // Por ahora, simplemente mostramos una alerta con el nombre de la ciudad
+                const cityImage = cities[selectedCity].img;
+                activityImage.src = cityImage;
+                activityImage.style.display = 'block';
             });
         });
     </script>
